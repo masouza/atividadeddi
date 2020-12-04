@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Meta-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Index</title>
+
+        <!--Links-->
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="simplegrid/simple-grid.css">
+    </head>
+    <body>
+
+        <!--Js-->
+        <script>
+            var divisao = 0;
+            function calcMedia() {
+                var fnota1 = parseInt(document.getElementById("fnotas").elements["fnota1"].value);
+                var fnota2 = parseInt(document.getElementById("fnotas").elements["fnota2"].value);
+                var fnota3 = parseInt(document.getElementById("fnotas").elements["fnota3"].value);
+                var soma = Number(fnota1) + Number(fnota2) + Number(fnota3);
+                var divisao = soma/3;
+               
+                document.getElementById("valor").innerHTML = divisao;
+                sePassou();
+            }
+
+            function sePassou() {
+                if (divisao=>6){
+                    document.getElementById("sePassou").innerHTML = "Você passou!"; 
+                }else{
+                    document.getElementById("sePassou").innerHTML = "Você não passou...";
+                }
+            }
+        </script>
+
+        
+        <!--Título-->
+        <container>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <h2>Insira suas notas nesse semestre:</h2>
+                </div>
+            </div>
+
+            <!--Formulário-->
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <form id="fnotas">
+                        <div class="row">
+                            <label for="fnota1">Nota 1:</label>
+                            <input type="text" name="fnota1">
+                        </div>
+                        <div class="row">
+                            <label for="fnota2">Nota 2:</label>
+                            <input type="text" name="fnota2">
+                        </div>
+                        <div class="row">
+                            <label for="fnota3">Nota 3:</label>
+                            <input type="text" name="fnota3">
+                        </div>
+                        <div class="row"></div>
+                            <input type="button" value="Calcular" onclick="calcMedia()">
+                            <p id="valor"></p>
+                            <p id="sePassou"></p>
+                        </div>
+                    </form>
+
+                   
+                </div>
+            </div>
+        </container>
+        
+    </body>
+</html>
